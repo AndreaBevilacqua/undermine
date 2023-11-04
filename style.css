@@ -1,0 +1,178 @@
+/*
+COLOR PALETTE
+  black: rgb(0, 23, 50); #001732;
+  orange: rgb(241, 117, 78); #f1754e;
+  lightgreen: rgb(78, 241, 187); #4ef1bb;
+  bg-color: rgb(216, 238, 232);  #d8eee8;
+  bg-dark-color: rgb(203, 224, 221); #cbe0dd;
+  clicked-cell: rgb(157, 197, 199); #9dc5c7;
+*/
+
+/* CSS RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+
+/* Regole generiche */
+body {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 16px;
+    line-height: 1;
+    color: rgb(253, 253, 253);
+    background-color: rgb(216, 238, 232);
+    background-image: url('images/sfondo.png');
+    background-size: cover;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.game-container {
+	width: 484px;
+}
+
+/* Pannello di gioco */
+h1 {
+	font-size: 80px;
+}
+
+.score {
+	font-size: 32px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Tabellone di gioco */
+
+.game-board {
+	position: relative;
+	background-color: rgba(20, 10, 64, 0.242);
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px  rgba(75, 189, 255, 0.566);
+	width: 100%; 
+        height: auto;
+        overflow: hidden; 
+}
+
+.grid {
+	height: 480px;
+	width: 480px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	position: relative;
+}
+
+.cell {
+	width: 48px;
+	height: 48px;
+	cursor: pointer;
+	/* border: 1px dashed black; */
+}
+
+.cell-dark {
+	background-color: rgba(24, 99, 109, 0.566);
+}
+
+.cell:hover,
+.cell-clicked {
+	background-color: rgba(0, 217, 255, 0.566);
+}
+
+.cell-treasure {
+	background-color: rgba(247, 247, 247, 0);
+	background-image: url('images/winner.png');
+	background-size: contain;
+}
+
+.cell-clicked,
+.cell-treasure {
+	cursor: pointer; 
+}
+
+.cell-bomb {
+	background-color: rgba(247, 247, 247, 0);
+	background-image: url('images/Bomb.png');
+	background-size: contain;
+}
+
+.cell-clicked,
+.cell-bomb {
+	cursor: not-allowed; 
+}
+
+
+/* Schermata di fine gioco */
+.end-game-screen {
+    background-color:  rgba(40, 24, 109, 0);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.win {
+    background-color:  rgba(24, 37, 109, 0);
+    background-image: url('images/undertale.gif');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.end-game-text {
+	font-size: 120px;
+	line-height: 1.2;
+	font-family: 'Pixelify Sans', sans-serif;
+	margin-bottom: 16px;
+	margin: 16px;
+	color:rgb(19, 255, 255);
+}
+
+button {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px solid rgba(24, 32, 109, 0);
+	font-size: 24px;
+	font-family: 'Pixelify Sans', sans-serif;
+	text-transform: uppercase;
+	padding: 4px 20px 8px 20px;
+	cursor: pointer;
+	z-index: 3;
+}
+
+button:hover {
+	background-color:  rgb(24, 47, 109);
+}
+
+.hidden {
+	display: none;
+}
